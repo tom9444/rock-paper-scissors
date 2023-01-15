@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+  </head>
+  <body>
+    <h1>Rock, scissors & paper game</h1>
+    <span>Choose your option</span>
+    <button>rock</button>
+    <button>paper</button>
+    <button>scissors</button>
+
+
+
+
+
+
+
+
+      <script>
+
+        // generates computer's choice
+        function getComputerChoice () {    
+          let choices = ["rock","paper","scissors"];
+          let randomChoice = choices[Math.floor(Math.random()*choices.length)];
+          return randomChoice;
+        }
+
+        // asks for user's choice
+        function getUserChoice () {
+          let playerSelection = prompt("what option do you take? - rock / scissors / paper?").toLowerCase();
+          return playerSelection;
+        }
+
+        //plays one round of the game
+        function playGame (getUserChoice, getComputerChoice) {
+          let result;
+          console.log ("User choice = " + getUserChoice);
+          console.log ("Computer choice = " + getComputerChoice);
+          switch (getUserChoice + getComputerChoice) {
+           case "rockscissors":
+           case "scissorspaper": 
+           case "paperrock":
+            result = `You won!`;
+            break;
+           case "rockpaper":
+           case "paperscissors":
+           case "scissorsrock":
+           result = `You lose!`;
+            break;
+            case "rockrock":
+           case "paperpaper":
+           case "scissorsscissors":
+           result = `It is a draw`;
+           break;
+           default: 
+            alert (`Refresh the page and enter a valid option`);
+          }
+          return result;
+        }
+
+        // repeat the game 5 times
+        function game () {
+          let winCount = 0;
+          let result = 0;
+          for (let gameCount = 1; gameCount <= 5; gameCount++) {
+            console.log ("User wins count: " + winCount);
+            result = playGame (getUserChoice(), getComputerChoice());
+            console.log (result);
+            if (result == `You won!`) {
+              winCount++;
+            }
+
+            //draw is not counted as a game
+            else if (result == "It is a draw") { 
+              gameCount--;
+            }
+            console.log ("Game count: " + gameCount);                      
+
+            // if user wins
+            if (winCount >= 3) {
+              gameCount = 5;
+              console.log ("You are the winner of most of the games!");
+            }
+
+            // if computer wins
+            else if (winCount < 3 && gameCount == 5) {
+              console.log ("Computer is the winner of most of the games!");
+            }
+          }            
+        }
+        game();
+    
+      </script>
+  </body>
+</html>

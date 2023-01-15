@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: Raleway;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  background-color: beige;
+}
+
+.header {
+  font-size: 52px;
+  height: 100px;
+  background: #e4de89;
+ }
+
+ .selection {
+  padding-top: 20px;
+ }
+
+ .header, .selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .choices {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+input {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 0;
+  max-width: 150px;
+  height: auto;
+  transition: transform .2s;
+}
+
+input:hover {
+  transform:scale(1.2);
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  gap: 15px;
+  padding-left: 20px;
+}
+
+#result, #gameCount, #gameResult{
+  font-weight: bold;
+}
+
+#gameResult{
+  font-size: 30px;
+}
+
+button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  font-family: Raleway;
+  font-size: 24px;
+  border: 5px;
+  border-radius: 8px;
+  background: rgb(162, 160, 25);
+  padding: 10px 28px;
+  margin-top: 15px;
+  max-width: 250px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #777409;
+  color: white;
+}
+
+#scissors {
+  max-height: 150px;
+}
